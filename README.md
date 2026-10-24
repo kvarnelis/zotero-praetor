@@ -25,7 +25,7 @@ These executable paths are currently fixed. An installation elsewhere will need 
 
 Open the **AI** section in Zotero's item pane, choose the runtime, and check its login status. **Log In** opens Terminal for the provider's login command. Complete that process, return to Zotero, and choose **Check Login**.
 
-The add-on registers its own authenticated library endpoint in Zotero and passes the connection details to its CLI requests. There is no separate MCP server to install for in-pane use. Zotero's built-in HTTP server must be enabled; Praetor reports when it is unavailable. **Copy MCP Config** is for connecting an external client and is not a required setup step.
+The add-on registers its own authenticated library endpoint in Zotero and passes the connection details to its CLI requests. There is no separate MCP server to install for in-pane use. Zotero's built-in local HTTP server is enabled by default, so it normally needs no setup. If Praetor reports that it is disabled, open Zotero **Settings → Advanced → Config Editor**, search for `extensions.zotero.httpServer.enabled`, set it to `true`, and restart Zotero. See Zotero's [hidden preferences documentation](https://www.zotero.org/support/preferences/hidden_preferences) for this setting. **Copy MCP Config** is for connecting an external client and is not a required setup step.
 
 ## Use
 
