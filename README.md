@@ -57,14 +57,15 @@ The current release is built for macOS and relies on zsh and AppleScript for CLI
 
 Extracted unit tests cover parsing, selection, proposals, notes, and access behavior. The predecessor build received Zotero 10.0.6 startup and registration checks; this standalone release has not yet had a complete provider conversation or library-editing acceptance test on a fresh computer.
 
-## Other plugins
+## Related tools
 
-These plugins install independently. No suite is required.
+See the [Zotero Tools main page](https://kvarnelis.github.io/zotero-tools/) for an overview. Each tool installs independently. Book Helper is a separate Mac app.
 
 - [NotebookLM Pane for Zotero](https://github.com/kvarnelis/zotero-notebooklm-pane) — Keep Google NotebookLM in the item pane and prepare local PDFs for its upload dialog.
 - [Page View for Zotero](https://github.com/kvarnelis/zotero-page-view) — Add single-page reading, two-page spreads, page fitting, and focus controls to the PDF reader.
 - [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show compact metadata fields and copy attachment paths from the item menu.
 - [Quiet Theme for Zotero](https://github.com/kvarnelis/zotero-quiet-theme) — Switch Zotero’s native appearance and manage a compact interface overlay.
+- [Book Helper](https://github.com/kvarnelis/book-helper) — Identify and rename PDF and DRM-free EPUB books in a native Mac app, with optional Zotero import.
 
 ## Build and check
 
