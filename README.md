@@ -57,6 +57,15 @@ The current release is built for macOS and relies on zsh and AppleScript for CLI
 
 Extracted unit tests cover parsing, selection, proposals, notes, and access behavior. The predecessor build received Zotero 10.0.6 startup and registration checks; this standalone release has not yet had a complete provider conversation or library-editing acceptance test on a fresh computer.
 
+## Other plugins
+
+These plugins install independently. No suite is required.
+
+- [NotebookLM Pane for Zotero](https://github.com/kvarnelis/zotero-notebooklm-pane) — Keep Google NotebookLM in the item pane and prepare local PDFs for its upload dialog.
+- [Page View for Zotero](https://github.com/kvarnelis/zotero-page-view) — Add single-page reading, two-page spreads, page fitting, and focus controls to the PDF reader.
+- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show compact metadata fields and copy attachment paths from the item menu.
+- [Quiet Theme for Zotero](https://github.com/kvarnelis/zotero-quiet-theme) — Switch Zotero’s native appearance and manage a compact interface overlay.
+
 ## Build and check
 
 Building requires a Unix shell, `zip`, and Python 3. Syntax checks and any included unit tests require Node.js. End users installing an XPI do not need these developer tools.
