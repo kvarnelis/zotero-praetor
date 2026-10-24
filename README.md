@@ -63,8 +63,8 @@ See the [Zotero Tools main page](https://kvarnelis.github.io/zotero-tools/) for 
 
 - [NotebookLM Pane for Zotero](https://github.com/kvarnelis/zotero-notebooklm-pane) — Keep Google NotebookLM in the item pane and prepare local PDFs for its upload dialog.
 - [Page View for Zotero](https://github.com/kvarnelis/zotero-page-view) — Add single-page reading, two-page spreads, page fitting, and focus controls to the PDF reader.
-- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show compact metadata fields and copy attachment paths from the item menu.
-- [Quiet Theme for Zotero](https://github.com/kvarnelis/zotero-quiet-theme) — Switch Zotero’s native appearance and manage a compact interface overlay.
+- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show selected metadata fields for each item type, expand the full list when needed, and copy attachment paths.
+- [Quiet Theme for Zotero](https://github.com/kvarnelis/zotero-quiet-theme) — Change Zotero’s colors, typography, and interface spacing.
 - [Book Helper](https://github.com/kvarnelis/book-helper) — Identify and rename PDF and DRM-free EPUB books in a native Mac app, with optional Zotero import.
 
 ## Build and check
