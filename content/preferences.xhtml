@@ -1,0 +1,79 @@
+<vbox id="zys-praetor-preferences"
+	class="main-section"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	onload="Zotero.ZoteroKPraetor.initPreferencesPane(this)">
+	<groupbox aria-labelledby="zys-praetor-preferences-panels-title">
+		<label><html:h2 id="zys-praetor-preferences-panels-title">Panels</html:h2></label>
+		<vbox class="zys-praetor-preferences-options">
+			<checkbox
+				label="Item-pane section"
+				preference="extensions.zotero.zoteroKPraetor.ui.miniPanel"
+				native="true"/>
+			<description class="zys-praetor-preferences-description">
+				The compact AI section in the library and reader item panes.
+			</description>
+			<checkbox
+				label="Full-pane view"
+				preference="extensions.zotero.zoteroKPraetor.ui.fullPanel"
+				native="true"/>
+			<description class="zys-praetor-preferences-description">
+				The sidenav button that swaps the whole right pane.
+			</description>
+			<description class="zys-praetor-preferences-caption">
+				Both off hides Praetor everywhere; the settings stay here.
+			</description>
+		</vbox>
+	</groupbox>
+
+	<groupbox aria-labelledby="zys-praetor-preferences-defaults-title">
+		<label><html:h2 id="zys-praetor-preferences-defaults-title">Defaults</html:h2></label>
+		<vbox class="zys-praetor-preferences-options">
+			<hbox align="center" class="zys-praetor-preferences-row">
+				<label value="Runtime" control="zys-praetor-preferences-runtime"/>
+				<menulist
+					id="zys-praetor-preferences-runtime"
+					preference="extensions.zotero.zoteroKPraetor.ai.runtime"
+					native="true">
+					<menupopup>
+						<menuitem label="ChatGPT Codex" value="codex"/>
+						<menuitem label="Claude" value="claude"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+			<hbox align="center" class="zys-praetor-preferences-row">
+				<label value="Library access" control="zys-praetor-preferences-access"/>
+				<menulist
+					id="zys-praetor-preferences-access"
+					preference="extensions.zotero.zoteroKPraetor.mcp.access"
+					native="true">
+					<menupopup>
+						<menuitem label="Read" value="read" tooltiptext="Search and read items, notes, and indexed attachment text. Nothing changes."/>
+						<menuitem label="Add notes" value="notes" tooltiptext="May also create new notes on items or in collections. Never edits or deletes anything."/>
+						<menuitem label="Propose changes" value="propose" tooltiptext="May draft edits and filing as proposals for your review. Writes nothing until you approve each one."/>
+						<menuitem label="Edit items" value="write" tooltiptext="May edit metadata fields, tags, and which collections an item is in. Edits go into your database and sync like your own."/>
+						<menuitem label="Reorganize" value="reorganize" tooltiptext="May also create collections and rename or move them. Never deletes a collection — that stays yours."/>
+					</menupopup>
+				</menulist>
+			</hbox>
+			<checkbox
+				label="Attachment files"
+				preference="extensions.zotero.zoteroKPraetor.files.attachments"
+				tooltiptext="May read the PDF and other files attached to the selected item."
+				native="true"/>
+			<checkbox
+				label="Notes vault"
+				preference="extensions.zotero.zoteroKPraetor.files.vault"
+				tooltiptext="May read your Obsidian vault, read-only."
+				native="true"/>
+		</vbox>
+	</groupbox>
+
+	<groupbox aria-labelledby="zys-praetor-preferences-about-title">
+		<label><html:h2 id="zys-praetor-preferences-about-title">About</html:h2></label>
+		<description>
+			<html:span id="zys-praetor-preferences-version"></html:span>
+			<html:span> — Praetor — local CLI agents inside Zotero.</html:span>
+		</description>
+	</groupbox>
+</vbox>

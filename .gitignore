@@ -1,0 +1,10 @@
+dist/
+.DS_Store
+.claude/
+.codex/
+work/
+*.xpi
+*.zip
+*.log
+*.sqlite*
+*conversations*.json

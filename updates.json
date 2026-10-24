@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "zys-praetor@kazys.local": {
+      "updates": [
+        {
+          "version": "0.9.14",
+          "update_link": "https://github.com/kvarnelis/zotero-praetor/releases/download/v0.9.14/zotero-praetor.xpi",
+          "update_hash": "sha256:246452fb1db7731da0d04ef6e06116c055d0f3981a9a3ad7736a4b806840e37f",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "9.0",
+              "strict_max_version": "10.0.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
