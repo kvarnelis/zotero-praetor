@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Praetor for Zotero",
-  "version": "0.9.14",
+  "version": "0.9.15",
   "description": "Local Codex and Claude item-pane chat for selected Zotero items, with library-wide search and read tools.",
   "author": "Kazys Varnelis",
   "applications": {

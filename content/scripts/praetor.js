@@ -95,9 +95,34 @@ var ZoteroKPraetor = {
 	DEFAULT_CLAUDE_MODEL: "sonnet",
 	CLAUDE_ONE_M_SUFFIX: "[1m]",
 	CLAUDE_PROVIDER_PREFIX: "claude-code/",
-	CODEX_PATH: "/opt/homebrew/bin/codex",
+	get CODEX_PATH() {
+		return this.findRuntimeExecutable("codex");
+	},
+
 	get CLAUDE_PATH() {
-		return `${this.getHomeDir()}/.local/bin/claude`;
+		return this.findRuntimeExecutable("claude");
+	},
+
+	getRuntimeBinDirs() {
+		return [`${this.getHomeDir()}/.local/bin`, "/opt/homebrew/bin", "/usr/local/bin",
+			"/usr/bin", "/bin", "/usr/sbin", "/sbin"];
+	},
+
+	findRuntimeExecutable(name) {
+		const candidates = this.getRuntimeBinDirs().map((dir) => `${dir}/${name}`);
+		return candidates.find((path) => this.isRuntimeExecutable(path)) ?? candidates[0];
+	},
+
+	isRuntimeExecutable(path) {
+		try {
+			const file = Components.classes["@mozilla.org/file/local;1"]
+				.createInstance(Components.interfaces.nsIFile);
+			file.initWithPath(path);
+			return file.isFile() && file.isExecutable();
+		}
+		catch (_) {
+			return false;
+		}
 	},
 
 	getHomeDir() {
@@ -2514,7 +2539,7 @@ var ZoteroKPraetor = {
 			"env",
 			`HOME=${this.shellQuote(this.getHomeDir())}`,
 			"NO_COLOR=1",
-			`PATH=${this.shellQuote(`/opt/homebrew/bin:${this.getHomeDir()}/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin`)}`,
+			`PATH=${this.shellQuote(this.getRuntimeBinDirs().join(":"))}`,
 		];
 		if (runtime === "codex" && mcp?.enabled) {
 			envParts.push(`ZYS_PRAETOR_MCP_TOKEN=${this.shellQuote(mcp.token)}`);

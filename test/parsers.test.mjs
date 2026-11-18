@@ -210,3 +210,21 @@ test("runtime commands follow the active home and request directory", () => {
  }
  assert.equal(runtime.CLAUDE_PATH, "/tmp/synthetic home/.local/bin/claude");
 });
+
+test("both runtimes prefer standalone executables and fall back to Homebrew or /usr/local", () => {
+	const runtime = Object.create(parsers);
+	runtime.getHomeDir = () => "/tmp/synthetic home";
+	const standaloneCodex = "/tmp/synthetic home/.local/bin/codex";
+	const standaloneClaude = "/tmp/synthetic home/.local/bin/claude";
+	const executables = new Set([
+		standaloneCodex, standaloneClaude, "/opt/homebrew/bin/codex", "/usr/local/bin/claude",
+	]);
+	runtime.isRuntimeExecutable = (path) => executables.has(path);
+
+	assert.equal(runtime.CODEX_PATH, standaloneCodex);
+	assert.equal(runtime.CLAUDE_PATH, standaloneClaude);
+	executables.delete(standaloneCodex);
+	executables.delete(standaloneClaude);
+	assert.equal(runtime.CODEX_PATH, "/opt/homebrew/bin/codex");
+	assert.equal(runtime.CLAUDE_PATH, "/usr/local/bin/claude");
+});

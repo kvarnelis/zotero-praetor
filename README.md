@@ -6,7 +6,7 @@ It uses an installed CLI and its existing account login. The add-on does not ask
 
 ## Install
 
-Current version: **0.9.14**. Supported target: **Zotero 9.x and 10.0.x on macOS**. No companion add-on is required.
+Current version: **0.9.15**. Supported target: **Zotero 9.x and 10.0.x on macOS**. No companion add-on is required.
 
 1. Download [`zotero-praetor.xpi`](https://github.com/kvarnelis/zotero-praetor/releases/latest/download/zotero-praetor.xpi) from [Releases](https://github.com/kvarnelis/zotero-praetor/releases).
 2. In Zotero, open the Add-ons Manager and choose **Install Add-on From File…**.
@@ -18,10 +18,7 @@ After this version is installed, Zotero can check this repository's `updates.jso
 
 Install and sign in to at least one supported runtime before sending a message:
 
-- Codex must be available at `/opt/homebrew/bin/codex`.
-- Claude Code must be available at `$HOME/.local/bin/claude`.
-
-These executable paths are currently fixed. An installation elsewhere will need to be made available at the expected path; the add-on has no executable-path picker. You only need one runtime. Provider account access and any usage limits belong to that runtime.
+Praetor looks for both `codex` and `claude` in `~/.local/bin`, `/opt/homebrew/bin`, `/usr/local/bin`, and the standard system executable directories, in that order. You only need one runtime. Provider account access and any usage limits belong to that runtime.
 
 Open the **AI** section in Zotero's item pane, choose the runtime, and check its login status. **Log In** opens Terminal for the provider's login command. Complete that process, return to Zotero, and choose **Check Login**.
 
